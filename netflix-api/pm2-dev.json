@@ -1,0 +1,26 @@
+{
+    "apps":[
+        {
+            "exec_mode":"fork",
+            "instances": 1,
+            "script": "index.js",
+            "interpreter": "node",
+            "watch": ["src","conf"],
+            "ignroe_watch": ["node_modules"],
+            "env": {
+                "HOST":"0.0.0.0",
+                "PORT":"8080",
+                "service": {
+                    "mongodb": {
+                        "local": {
+                            "conn_type": "mongodb",
+                            "ip": "localhost",
+                            "port": "27017",
+                            "path": "/netflix-new-db?retryWrites=true&w=majority"
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}
